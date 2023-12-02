@@ -40,7 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="ko">
       <body className={cn(['font-sans antialiased', pretendard.className])}>
         <Toaster />
-        {children}
+        <div className="flex flex-col flex-1 min-h-screen bg-gray-50">{children}</div>
       </body>
     </html>
   );
