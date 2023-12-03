@@ -28,7 +28,7 @@ export function Chat({ id, initialMessages }: ChatProps) {
 
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <div className="relative min-w-[50rem] w-full border min-h-[37.5rem] rounded-xl p-5 bg-background shadow-lg">
+      <div className="relative min-w-[40rem] w-full border min-h-[37.5rem] rounded-xl p-5 bg-background shadow-lg">
         <div className="flex flex-col gap-2">
           <div className="relative">
             <ChatHeader />
