@@ -1,21 +1,24 @@
 'use client'
 
+import { type UseChatHelpers } from 'ai/react'
 import { useEnterSubmit } from '@/hooks/useEnterSubmit'
 import { ChangeEvent, FormEventHandler, useRef } from 'react'
 import Textarea from 'react-textarea-autosize'
 
-type ChatInputProps = {
-  value: any
+type ChatInputProps = Pick<
+  UseChatHelpers,
+  'isLoading' | 'reload' | 'messages' | 'stop' | 'input' | 'setInput'
+> & {
+  id?: string
   setInput: (value: string) => void
   onSubmit: (value: string) => Promise<void>
-  isLoading: boolean
 }
 
 export function ChatInput({
   isLoading,
-  value,
+  input: value,
   setInput,
-  onSubmit,
+  onSubmit
 }: ChatInputProps) {
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const { formRef, onKeyDown } = useEnterSubmit()
